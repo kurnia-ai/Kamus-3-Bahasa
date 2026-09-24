@@ -8,7 +8,7 @@ st.write("Menerjemahkan: **Indonesia ➔ Inggris ➔ Daerah**")
 
 # --- 2. MEMUAT DATA DARI GOOGLE DRIVE ---
 # GANTI teks di dalam tanda kutip di bawah ini dengan link CSV dari Google Sheets Anda
-URL_GOOGLE_SHEETS = "https://drive.google.com/drive/folders/1BxIau3YElOrGJNhXb1dFKcEaOLs2tUCM?usp=sharing"
+URL_GOOGLE_SHEETS = "https://drive.google.com/drive/folders/1BxIau3YElOrGJNhXb1dFKcEaOLs2tUCM"
 
 # Menggunakan cache agar aplikasi tidak mendownload ulang data setiap kali mengetik
 @st.cache_data
