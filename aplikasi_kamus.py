@@ -4,7 +4,7 @@ import re
 
 # --- 1. PENGATURAN TAMPILAN HALAMAN ---
 st.set_page_config(page_title="Kamus 3 Bahasa", page_icon="📚")
-st.title("📚 Automotive Dictionery (Bengkel Otomotif)")
+st.title("📚 Automotive Dictionery         (Bengkel Otomotif)")
 st.write("Menerjemahkan: **Indonesia ➔ Inggris ➔ Daerah**")
 st.write("Credit by awan")
 
