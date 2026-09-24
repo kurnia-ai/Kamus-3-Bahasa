@@ -4,7 +4,7 @@ import re
 
 # --- 1. PENGATURAN TAMPILAN HALAMAN ---
 st.set_page_config(page_title="Kamus 3 Bahasa", page_icon="📚")
-st.title("📚 Kamus Pencari 3 Bahasa (Otomotif)")
+st.title("📚 Kamus Pencari 3 Bahasa (Otomotif-Bengkel)")
 st.write("Menerjemahkan: **Indonesia ➔ Inggris ➔ Daerah**")
 
 # --- 2. MEMUAT & MEMBERSIHKAN DATA DARI CSV LOKAL ---
