@@ -43,15 +43,16 @@ try:
     
     # --- 3. KOTAK PENCARIAN ---
     st.markdown("---")
-    kata_cari = st.text_input("🔍 Masukkan kata (Bahasa Indonesia atau Inggris):")
+    kata_cari = st.text_input("🔍 Masukkan kata (Indonesia / Inggris / Daerah):")
 
     if kata_cari:
-        # Mencari kata di kolom 'Indonesia' ATAU kolom 'Inggris'
+        # Mencari kata di kolom 'Indonesia', 'Inggris', ATAU 'Daerah'
         hasil_id = df['Indonesia'].str.contains(kata_cari, case=False, na=False)
         hasil_en = df['Inggris'].str.contains(kata_cari, case=False, na=False)
+        hasil_daerah = df['Daerah'].str.contains(kata_cari, case=False, na=False)
         
-        # Gabungkan hasil pencarian
-        hasil = df[hasil_id | hasil_en]
+        # Gabungkan hasil pencarian dari ketiga kolom
+        hasil = df[hasil_id | hasil_en | hasil_daerah]
         
         # --- 4. MENAMPILKAN HASIL TERJEMAHAN ---
         if not hasil.empty:
