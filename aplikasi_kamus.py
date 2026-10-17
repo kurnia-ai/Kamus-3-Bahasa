@@ -17,7 +17,7 @@ def load_data():
     
     # 2. Ambil kolom yang tepat (Kolom 1 = Inggris, Kolom 7 = Indonesia, Kolom 8 = Daerah)
     df_clean = df.iloc[:, [0, 6, 7]].copy()
-    df_clean.columns = ['Inggris', 'Indonesia', 'Daerah']
+    df_clean.columns = ['Inggris', 'Indonesia', 'Lokal']
     
     # 3. Hapus baris pertama (karena itu header bawaan) dan baris gambar (Figure)
     df_clean = df_clean.drop(0)
@@ -34,7 +34,7 @@ def load_data():
     df_clean['Inggris'] = df_clean['Inggris'].apply(bersihkan_inggris)
     
     # 5. Hapus baris jika Indonesia dan Daerah-nya sama-sama kosong
-    df_clean = df_clean.dropna(subset=['Indonesia', 'Daerah'], how='all')
+    df_clean = df_clean.dropna(subset=['Indonesia', 'Lokal'], how='all')
     df_clean = df_clean.astype(str) 
     
     return df_clean
@@ -50,7 +50,7 @@ try:
         # Mencari kata di kolom 'Indonesia', 'Inggris', ATAU 'Daerah'
         hasil_id = df['Indonesia'].str.contains(kata_cari, case=False, na=False)
         hasil_en = df['Inggris'].str.contains(kata_cari, case=False, na=False)
-        hasil_daerah = df['Daerah'].str.contains(kata_cari, case=False, na=False)
+        hasil_daerah = df['Lokal'].str.contains(kata_cari, case=False, na=False)
         
         # Gabungkan hasil pencarian dari ketiga kolom
         hasil = df[hasil_id | hasil_en | hasil_daerah]
@@ -63,7 +63,7 @@ try:
                 # Membersihkan tulisan "nan" jika ada data yang kosong
                 teks_indo = row['Indonesia'] if row['Indonesia'] != 'nan' else 'Tidak ada'
                 teks_inggris = row['Inggris'] if row['Inggris'] != 'nan' else 'Tidak ada'
-                teks_daerah = row['Daerah'] if row['Daerah'] != 'nan' else 'Tidak ada'
+                teks_daerah = row['Lokal'] if row['Lokal'] != 'nan' else 'Tidak ada'
 
                 st.markdown(f"### 🇮🇩 {teks_indo}")
                 
@@ -71,7 +71,7 @@ try:
                 with col1:
                     st.info(f"**🇬🇧 Bahasa Inggris:**\n\n{teks_inggris}")
                 with col2:
-                    st.warning(f"**🏘️ Bahasa Daerah:**\n\n{teks_daerah}")
+                    st.warning(f"**🏘️ Bahasa Lokal:**\n\n{teks_daerah}")
                     
                 st.markdown("---")
         else:
