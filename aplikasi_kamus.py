@@ -44,7 +44,7 @@ try:
     
     # --- 3. KOTAK PENCARIAN ---
     st.markdown("---")
-    kata_cari = st.text_input("🔍 Masukkan kata (Indonesia / Inggris / Daerah):")
+    kata_cari = st.text_input("🔍 Masukkan kata (Indonesia / Inggris / Lokal):")
 
     if kata_cari:
         # Mencari kata di kolom 'Indonesia', 'Inggris', ATAU 'Daerah'
