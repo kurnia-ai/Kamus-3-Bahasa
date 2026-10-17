@@ -5,7 +5,7 @@ import re
 # --- 1. PENGATURAN TAMPILAN HALAMAN ---
 st.set_page_config(page_title="Kamus 3 Bahasa", page_icon="📚")
 st.title("📚 Automotive Dictionary v.1 (Bengkel Otomotif)")
-st.write("Menerjemahkan: **Indonesia ➔ Inggris ➔ Daerah**")
+st.write("Menerjemahkan: **Indonesia ➔ Inggris ➔ Lokal**")
 st.write("Credit by awan")
 
 # --- 2. MEMUAT & MEMBERSIHKAN DATA DARI CSV LOKAL ---
